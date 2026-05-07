@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    background: radial-gradient(circle at top left, #ff3d00, transparent 40%),
+                radial-gradient(circle at top right, #00d2ff, transparent 40%),
+                radial-gradient(circle at bottom left, #9d50bb, transparent 40%),
+                radial-gradient(circle at bottom right, #6e48aa, transparent 40%);
+    background-color: #121212;
+    z-index: -1;
+}
+
+.calculator-container {
+    width: 100%;
+    max-width: 320px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    padding: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.display {
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px;
+    color: white;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.previous-operand {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.current-operand {
+    font-size: 3.5rem;
+    font-weight: 300;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btn:active {
+    transform: scale(0.92);
+    filter: brightness(1.2);
+}
+
+.number {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.number:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.operator {
+    background: rgba(255, 159, 10, 0.8);
+}
+
+.operator:hover {
+    background: rgba(255, 159, 10, 1);
+}
+
+.function {
+    background: rgba(255, 255, 255, 0.3);
+    color: #000;
+}
+
+.function:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.double {
+    grid-column: span 2;
+    width: auto;
+    border-radius: 30px;
+    padding-left: 25px;
+    justify-content: flex-start;
+}
